@@ -12,7 +12,7 @@ detector.detectAllEmotions();
 detector.detectAllExpressions();
 detector.detectAllEmojis();
 detector.detectAllAppearance();
-//hideCamera();
+hideCamera();
 
 
 //Add a callback to notify when the detector is initialized and ready for running.
