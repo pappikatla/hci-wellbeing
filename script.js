@@ -148,9 +148,9 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
       // #face_video_canvas is Affectiva's camera element ID. When using video filter effects this is the element you select to modify with the jQuery code.
 
       if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128542){ //disappointed
-          $('body').css({'background-color': '#292c85', "transition": "all .1s ease-in"}); // dark gloomy blue
+          $('body').css({'background-color': '#79a7f2', "transition": "all .1s ease-in"}); // light blue
           $("#face_video_canvas").css("filter", "grayscale(0.7) hue-rotate(270deg)"); //sad blue camera
-          document.getElementById("text").innerHTML = "Yo don't worry, you go dis bro!";
+          document.getElementById("text").innerHTML = "Yo don't worry, you got dis bro!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128563){ //flushed
           $('body').css({'background-color': '#ffb6c1', "transition": "all .1s ease-in"}); // light pink
@@ -158,7 +158,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "Yo, no problem! You better than ma grandma!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128535){ //kissing
-          $('body').css({'background-color': '#bc1e1b', "transition": "all .1s ease-in"}); //dark heart red
+          $('body').css({'background-color': '#f774d0', "transition": "all .1s ease-in"}); //darker pink
           $("#face_video_canvas").css("filter", "sepia(0.8)"); // sepia
           document.getElementById("text").innerHTML = "Get those lips away from me fool!";
       }
@@ -191,7 +191,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "Almost got it, but you still suck, fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128527){ //smirk
-          $('body').css({'background-color': '#297E63', "transition": "all .1s ease-in"}); // turtle body green
+          $('body').css({'background-color': '#48f24e', "transition": "all .1s ease-in"}); // green
           $("#face_video_canvas").css("filter", "grayscale(50%)"); //half-grayscale
           document.getElementById("text").innerHTML = "What you smirking at, fool?";
       }
@@ -206,7 +206,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "SAUCY";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128521){ //wink
-          $('body').css({'background-color': '#AEA4A4', "transition": "all .1s ease-in"}); //light brownish-purple
+          $('body').css({'background-color': '#c07ff9', "transition": "all .1s ease-in"}); //purple
           $("#face_video_canvas").css("filter", "blur(2px) grayscale(.2) opacity(0.8) hue-rotate(20deg)"); // ligh browish-purple blurred out camera
           document.getElementById("text").innerHTML = "What yo winkin at, fool?!";
       }
