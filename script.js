@@ -46,6 +46,8 @@ function onStart() {
     $("#logs").html("");
     detector.start();
     cameraOn = true;
+    document.getElementById("text").innerHTML = "Loading Camera...";
+
   }
   log('#logs', "Clicked the start button");
 }
