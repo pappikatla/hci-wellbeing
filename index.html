@@ -1,0 +1,92 @@
+
+<html>
+
+<head>
+<!-- import jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--import default Affectiva CSS code-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<!--import custom CSS-->
+<link rel="stylesheet" href="style.css">
+
+<!--import Affectiva javascript support-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
+
+<meta charset="utf-8" />
+<title> Design for Wellbeing: Team 4 </title>
+<script type="text/javascript" src="phaser.min.js"></script>
+<script type="text/javascript" src="tim_allen.js"></script>
+
+</head>
+
+<body>
+  <!-- the entire window container -->
+  <div class="container-fluid" align="center">
+
+
+    <!--START: container for top half of window; goes from above the start/stop/reset buttons to the top of screen -->
+    <div class="row">
+
+      <!-- camera container: col-md-8 (child) & affdex_elements (parent selector) -->
+      <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
+<!--
+      &lt;!&ndash; "emotion tracking results" and "detector log msgs" container &ndash;&gt;
+      <div class="col-md-4">
+
+        &lt;!&ndash; "emotion tracking results" container: title & results &ndash;&gt;
+        <div style="height:27em;"> &lt;!&ndash; height controls the height of the emotion tracking results container &ndash;&gt;
+          <strong>EMOTION TRACKING RESULTS</strong>
+          &lt;!&ndash; subcontainer that displays the detected emotions &ndash;&gt;
+          <div id="results" style="word-wrap:break-word;"></div>
+        </div>
+
+        &lt;!&ndash; "detector log msgs" title container &ndash;&gt;
+        <div>
+          <strong>DETECTOR LOG MSGS</strong>
+        </div>
+        &lt;!&ndash; "detector log msgs" log container &ndash;&gt;
+        <div id="logs"></div>
+
+      </div>
+      &lt;!&ndash; END of RIGHT SIDE container– the emotion tracking results and detector log msgs &ndash;&gt;
+
+    </div>
+    &lt;!&ndash; END of UPPER SCREEN container– camera & logs &ndash;&gt;
+
+
+    &lt;!&ndash; START: container that holds bottom half of screen– start/stop/reset buttons, Affectiva detector title, instructions &ndash;&gt;
+    <div>
+      <button id="start" onclick="onStart()">Start</button>
+      <button id="stop" onclick="onStop()">Stop</button>
+      <button id="reset" onclick="onReset()">Reset</button>
+      <h3>Affectiva JS SDK CameraDetector to track different emotions.</h3>
+      <p>
+        <strong>Instructions</strong>
+        </br>
+        Press the start button to start the detector.
+        <br/> When a face is detected, the probabilities of the different emotions are written to the DOM.
+        <br/> Press the stop button to end the detector.
+      </p>-->
+      <h3 id="text"></h3>
+      <h3>Flap Tim Allen's Bird</h3>
+      <button id="timAllen" onclick="timAllenFlappyBirdGame()">Play Flap Tim Allen's Bird</button>
+      <button id="pauseBtn" onclick="pauseGame()">Pause</button>
+      <p>
+        I AM MRS. NESBIT!
+      </p>
+        <p id="scoreText">Highest Score: 0 </p>
+    </div>
+    <!-- END: BOTTOM half of SCREEN container -->
+
+
+  </div>
+  <!-- END: ENTIRE SCREEN container -->
+
+<!-- Connect locally-hosted default affectiva camera script that makes everything work-->
+<script src="script.js"></script>
+</body>
+</html>
