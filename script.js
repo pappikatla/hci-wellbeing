@@ -13,7 +13,7 @@ detector.detectAllExpressions();
 detector.detectAllEmojis();
 detector.detectAllAppearance();
 hideCamera();
-
+$("#timAllenGif").hide();
 
 //Add a callback to notify when the detector is initialized and ready for running.
 detector.addEventListener("onInitializeSuccess", function() {
@@ -47,7 +47,7 @@ function onStart() {
     detector.start();
     cameraOn = true;
     document.getElementById("text").innerHTML = "Loading Camera...";
-
+    $("#timAllenGif").hide();
   }
   log('#logs', "Clicked the start button");
 }
@@ -168,12 +168,15 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "What you laughing at fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128545){ //rage
-          $('body').css({'background-color': '#d43a3a', "transition": "all .1s ease-in"}); // darker but bright red
+          $('body').css({'background-color': '#d4414b', "transition": "all .1s ease-in"}); // darker but bright red
           $("#face_video_canvas").css("filter", "saturate(8)"); // heatmap
           //timAllenFlappyBirdGame();
           pauseGame();
           onStop();
           document.getElementById("text").innerHTML = "Maybe you should take a break, get some food and drink. Come back in 5 minutes, then click the play button again to restart.";
+          $("#timAllenGif").show();
+          disablePlayBtn();
+          setTimeout(enablePlayBtn, 5000);
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128528){ //relaxed- default emoji
           $('body').css({'background-color': '#f7f7f7', "transition": "all .1s ease-in"}); // grey- regular background color
@@ -181,17 +184,17 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "Let's play, fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128561){ //scream
-          $('body').css({'background-color': '#0d50f5', "transition": "all .1s ease-in"}); // typical blue
+          $('body').css({'background-color': '#d1f56b', "transition": "all .1s ease-in"}); // typical blue
           $("#face_video_canvas").css("filter", "blur(7px)"); //blurred camera
           document.getElementById("text").innerHTML = "QUIET DOWN, FOOL!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 9786 || faces[0].emojis.dominantEmoji.codePointAt(0) == 128515){ //text-symbol smiley OR emoji open-mouth smiley
-          $('body').css({'background-color': '#fff44f', "transition": "all .1s ease-in"}); // yellow
+          $('body').css({'background-color': '#f8ff85', "transition": "all .1s ease-in"}); // yellow
           $("#face_video_canvas").css("filter", "brightness(2)"); //brightness up- mild
           document.getElementById("text").innerHTML = "Almost got it, but you still suck, fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128527){ //smirk
-          $('body').css({'background-color': '#48f24e', "transition": "all .1s ease-in"}); // green
+          $('body').css({'background-color': '#73ee7e', "transition": "all .1s ease-in"}); // green
           $("#face_video_canvas").css("filter", "grayscale(50%)"); //half-grayscale
           document.getElementById("text").innerHTML = "What you smirking at, fool?";
       }
@@ -201,12 +204,12 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "Put yo tongue back in yo mouth, fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128540){ //stuck out tongue with winking eye
-          $('body').css({'background-color': '#5ad', "transition": "all .1s ease-in"}); // pretty, mild blue
+          $('body').css({'background-color': '#70b0dd', "transition": "all .1s ease-in"}); // pretty, mild blue
           $("#face_video_canvas").css("filter", "saturate(5)"); // medium saturation
           document.getElementById("text").innerHTML = "SAUCY";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128521){ //wink
-          $('body').css({'background-color': '#c07ff9', "transition": "all .1s ease-in"}); //purple
+          $('body').css({'background-color': '#c195f9', "transition": "all .1s ease-in"}); //purple
           $("#face_video_canvas").css("filter", "blur(2px) grayscale(.2) opacity(0.8) hue-rotate(20deg)"); // ligh browish-purple blurred out camera
           document.getElementById("text").innerHTML = "What yo winkin at, fool?!";
       }

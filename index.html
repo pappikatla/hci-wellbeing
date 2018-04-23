@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 
 <!--import custom CSS-->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="row.css">
 
 <!--import Affectiva javascript support-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -29,7 +29,6 @@
 
 
     <!--START: container for top half of window; goes from above the start/stop/reset buttons to the top of screen -->
-    <div class="row">
 
       <!-- camera container: col-md-8 (child) & affdex_elements (parent selector) -->
       <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
@@ -71,16 +70,25 @@
         <br/> When a face is detected, the probabilities of the different emotions are written to the DOM.
         <br/> Press the stop button to end the detector.
       </p>-->
-      <div style="width:680px; position: absolute; left: 500px;">
-      <h2>Flap Tim Allen's Bird</h2>
-      <button id="timAllen" onclick="timAllenFlappyBirdGame()">Play</button>
-      <button id="pauseBtn" onclick="pauseGame()">Pause</button>
-        <h4 id="scoreText">Highest Score: 0 </h4>
-          <h3 id="text"></h3>
+      <div id="pageWrapper" class="row">
+      <div id ="leftCol" class="column" style="padding-top: 200px">
+          <h3 id="scoreText">High Score: 0 </h3>
+          <p id ="description" style="padding-top: 40px">Press the play button to start the game. Please allow the site to access your device's camera. It will detect various emotions as you are playing and react differently in each case.</p>
       </div>
-    </div>
-    <!-- END: BOTTOM half of SCREEN container -->
+          <div id="middleCol" class="column">
+              <h2>Flap Tim Allen's Bird</h2>
+              <button id="timAllen" onclick="timAllenFlappyBirdGame()">Play</button>
+              <button id="pauseBtn" onclick="pauseGame()">Pause</button>
+              <div id = "game" style ="position: relative; padding-top: 20px;"></div>
+              <h4 style="padding-top: 30px">Press Spacebar to Jump</h4>
+          </div>
+      <div id="rightSide" class="column" style="padding-top: 200px">
+          <h3 id="text"></h3>
+          <img src="assets/timAllenAngry.gif" id="timAllenGif" style="display: block"> </img>
+      </div>
+      </div>
 
+    <!-- END: BOTTOM half of SCREEN container -->
 
   </div>
   <!-- END: ENTIRE SCREEN container -->

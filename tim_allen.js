@@ -150,7 +150,7 @@ var mainState = {
 };
 
 // Initialize Phaser, and create a 400px by 490px game
-var game = new Phaser.Game(400, 490);
+var game = new Phaser.Game(400, 490, Phaser.CANVAS,'game');
 
 
 // var gameState = 0; // 0 is off, 1 is running (does not mean game is paused!)
@@ -168,6 +168,7 @@ var gameState = 0; // 0 before the game starts for the first time, 1 after that
 
 // starts the game only if it is the first time running or it is paused
 var timAllenFlappyBirdGame = function() {
+
 
     if (gameState === 0) { // when the game is running for the first time (state = 0)
         if (!cameraOn) {
@@ -201,7 +202,7 @@ var pauseGame = function() {
 
 };
 
-/*
+
 // enables play button
 var enablePlayBtn = function() {
     document.getElementById("timAllen").disabled = false;
@@ -211,7 +212,7 @@ var enablePlayBtn = function() {
 var disablePlayBtn = function() {
     document.getElementById("timAllen").disabled = true;
 };
-*/
+
 
 
 
@@ -220,7 +221,7 @@ var hiScore = 0;
 
 
 var updateScoreText = function() {
-    var baseText = "Highest Score: ";
+    var baseText = "High Score: ";
     var element = document.getElementById("scoreText");
     element.innerHTML = baseText + hiScore;
 };
