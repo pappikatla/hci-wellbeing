@@ -168,7 +168,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image,
           document.getElementById("text").innerHTML = "What you laughing at fool!";
       }
       else if(faces[0].emojis.dominantEmoji.codePointAt(0) == 128545){ //rage
-          $('body').css({'background-color': '#d4414b', "transition": "all .1s ease-in"}); // darker but bright red
+          $('body').css({'background-color': '#d45e5e', "transition": "all .1s ease-in"}); // darker but bright red
           $("#face_video_canvas").css("filter", "saturate(8)"); // heatmap
           //timAllenFlappyBirdGame();
           pauseGame();

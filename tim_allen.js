@@ -228,4 +228,19 @@ var updateScoreText = function() {
 
 
 
+var toggleMute = function() {
+    var img = document.getElementById("speakerImg");
+    var button = document.getElementById("muteBtn");
+    button.blur();
+    if (!game.sound.mute) {
+        game.sound.mute = true;
+        img.src = "assets/speakerOn.png";
+    }
+    else {
+        game.sound.mute = false;
+        img.src = "assets/speakerOff.png";
+    }
+}
+
+
 
